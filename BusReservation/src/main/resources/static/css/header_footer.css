@@ -1,0 +1,38 @@
+#changeHoverColorNav:hover {
+      background-color: hsl(0, 0%, 29%) !important;
+      /* background-color: white !important; */
+    }
+
+    #changeHoverColorMenu:hover {
+      background-color: hsl(0, 0%, 50%);
+    }
+
+    #burger-menu:hover {
+      background-color: hsl(0, 0%, 50%);
+    }
+
+    .container {
+     /* background: url('./oliver-cole-n8.jpg');*/
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      align-items: flex-start;
+
+
+    }
+    .logo-image{
+    width: 65px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: -6px;
+    }
+    
+
+#footer
+{
+    position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}

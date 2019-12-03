@@ -1,0 +1,37 @@
+input.form-control {
+  height: 50px;
+  border-radius: 0;
+}
+
+input.btn {
+  width: 200px;
+  border-radius: 0;
+}
+
+div.overlay {
+  margin-top: -8%;
+}
+
+div.left {
+  display: inline-block;
+  background-repeat: no-repeat;
+  height: 300px;
+  width: 480px;
+  background-image: url("assets/tmb_img.png");
+}
+div.footer-col {
+  margin-left: 50px;
+}
+.main{
+    background-image: url("../images/seats2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-outer-spin-button{
+    -webkit-appearance:none;
+}
+
