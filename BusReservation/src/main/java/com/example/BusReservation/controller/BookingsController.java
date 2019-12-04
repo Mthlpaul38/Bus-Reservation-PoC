@@ -76,7 +76,7 @@ public class BookingsController {
 		String tickdup = (String)request.getSession().getAttribute("ticktid");
 		
 		bookingRepo.updateBookingStatus(tickdup);
-		return"index";
+		return "index";
 		
 	}
 	

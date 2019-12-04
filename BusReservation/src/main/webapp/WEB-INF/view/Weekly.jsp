@@ -53,7 +53,7 @@
 											<th>Date of Booking</th>
 											<th>Journey Date</th>
 											<th>Seat ID</th>
-											<th>User_Id</th>
+											<th>Bus_Id</th>
 											<th>Contact_no</th>
 											<th>F_Name</th>
 										</tr>
@@ -67,7 +67,7 @@
 												<td>${entry.key.booking_date}</td>
 												<td>${entry.key.jurny_date}</td>
 												<td>${entry.key.seat_number}</td>
-												<td>${entry.value.user_id}</td>
+												<td>${entry.key.bus_id}</td>
 												<td>${entry.value.contact_no}</td>
 												<td>${entry.value.first_name}</td>
 											

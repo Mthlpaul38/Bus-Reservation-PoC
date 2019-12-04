@@ -92,7 +92,7 @@ public class StatisticsController {
 		List<Bookings> bl=brepo.selectMonthly();
 		for(Bookings b:bl)
 		{
-			User u1=urepo.findBooking(b.getBooking_id());
+			User u1=urepo.findBooking(b.getUser_id());
 			m1.put(b, u1);
 		}
 		m.addAttribute("user", m1);
@@ -105,7 +105,7 @@ public class StatisticsController {
 		List<Bookings> bl=brepo.selectDaily();
 		for(Bookings b:bl)
 		{
-			User u1=urepo.findBooking(b.getBooking_id());
+			User u1=urepo.findBooking(b.getUser_id());
 			m1.put(b, u1);
 		}
 		m.addAttribute("user", m1);
@@ -117,7 +117,7 @@ public class StatisticsController {
 		List<Bookings> bl=brepo.selectWeekly();
 		for(Bookings b:bl)
 		{
-			User u1=urepo.findBooking(b.getBooking_id());
+			User u1=urepo.findBooking(b.getUser_id());
 			m1.put(b, u1);
 		}
 		m.addAttribute("user", m1);

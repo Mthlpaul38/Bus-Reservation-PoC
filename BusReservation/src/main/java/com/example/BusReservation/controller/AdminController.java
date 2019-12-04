@@ -13,14 +13,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.example.BusReservation.models.Bookings;
 import com.example.BusReservation.models.Bus_Details;
 import com.example.BusReservation.models.City;
 import com.example.BusReservation.models.Timings;
+import com.example.BusReservation.repositories.BookingRepository;
 import com.example.BusReservation.repositories.Bus_DetailsRepository;
 import com.example.BusReservation.repositories.CityRepository;
 import com.example.BusReservation.repositories.TimingsRepository;
 import com.mysql.cj.Session;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Controller
@@ -31,6 +34,10 @@ public class AdminController {
 	CityRepository city_name;
 	@Autowired
 	TimingsRepository timings;
+	
+	@Autowired
+	BookingRepository brepo;
+	String message=" ";
 	
 	@RequestMapping(path = "/admin")
 	public String adminHome(HttpServletRequest request,HttpServletResponse responce)
@@ -131,6 +138,12 @@ public class AdminController {
 	}
 	@RequestMapping(path="/updatebus_detailes")
 	public String updatedetails(HttpServletRequest request) {
+		
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  
+	    Date date = new Date();  
+	  formatter.format(date);
+	  
+		
 		Integer b_id=Integer.parseInt(request.getParameter("bus_id"));
 		/*Bus_Details bs=new Bus_Details();
 		bs.setBus_id(b_id);*/
@@ -138,6 +151,9 @@ public class AdminController {
 		Bus_Details details=d.get();
 		String cityids[]=details.getCity_List().split(",");
 		List<String> citylist=new ArrayList();
+		List <Bookings> blist=brepo.findbusBookings(b_id, date);
+		if(blist.isEmpty())
+		{
 		for(String id:cityids) {
 			citylist.add(city_name.findCityName(Integer.parseInt(id)));
 		}
@@ -145,22 +161,36 @@ public class AdminController {
 		request.setAttribute("citylist", citylist);
 		request.setAttribute("timingslist", timingsList);
 		request.setAttribute("Bus_details", details);
+		}
 		return "updatebusdetails";
-		
 	}
 	@RequestMapping(path ="/delete")
-		public String delete(HttpServletRequest request){
+		public String delete(HttpServletRequest request,Model m){
+		
+		
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  
+	    Date date = new Date();  
+	  formatter.format(date);
+	  
+	  
 		int id=Integer.parseInt(request.getParameter("bus_id"));
 		Bus_Details bs=new Bus_Details();
 		bs.setBus_id(id);
 		List<Timings> tlist=timings.findtimings(bs);
+		List <Bookings> blist=brepo.findbusBookings(id, date);
+		if(blist.isEmpty())
+		{
+		
 		timings.deleteAll(tlist);
 		
 		System.out.println("delete mappting");
 		bus_Details.delete(bs);
-		
-		return "redirect:/admin";
 		}
+		return "redirect:/admin";
+		
+	
+	
+	}
 	@RequestMapping(path="/buscards")
 	public String buscard() {
 		return "buscards";

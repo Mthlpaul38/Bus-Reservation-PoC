@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     
     <!-- redirecting  -->
-    <meta http-equiv="refresh" content="6; url=http://localhost:8083/" />
+    <meta http-equiv="refresh" content="6; url=http://localhost:8083/login" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ticket</title>

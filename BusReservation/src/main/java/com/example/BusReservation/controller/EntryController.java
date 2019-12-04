@@ -83,10 +83,10 @@ public class EntryController {
 		List<User> li=urepo.findUser(u.getUser_email());
 		if(!li.isEmpty())
 		{
-			return "empty";
+			return "userexist";
 		}
 		
-		request.getSession().setAttribute("User", u);
+		request.getSession().setAttribute("user", u);
 	    urepo.save(u);
 		
 

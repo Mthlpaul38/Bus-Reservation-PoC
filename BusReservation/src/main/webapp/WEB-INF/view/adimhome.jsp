@@ -54,6 +54,10 @@
 					</ul>
 				</div>
 				<div>
+				
+				
+				</div>
+				<div>
 					<section class="tab-content">
 						<div class="columns">
 							<div class="column"></div>
@@ -117,7 +121,7 @@
 						}
 						else
 						{
-							f+=days[Integer.parseInt(fre[i])]+",";
+							f+=days[Integer.parseInt(fre[i])]+"";
 						}
 					}
 					%>
@@ -146,7 +150,7 @@
 										  String b_name=o.getBus_Name();
 										  
 										  %>
-												<!--   <a href="updatebus_detailes?bus_id=<%=b_id%>"><button class="button is-info">Update Details</button></a>-->
+												<%-- <a href="updatebus_detailes?bus_id=<%=b_id%>"><button class="button is-info">Update Details</button></a> --%>
 
 												<a onclick="deleteBusDetaiels('<%=b_id%>','<%=b_name%>');"><button
 														class="button is-danger">Delete</button></a>

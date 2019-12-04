@@ -1,5 +1,3 @@
-<%@ page import = "java.io.*,java.util.*" %>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,10 +22,10 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/css.css">
-    <title>EasyBus</title>
+    <title>BlackBus</title>
   </head>
   <body>
-  <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+   <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
        
       <button
         class="navbar-toggler"
@@ -40,11 +38,11 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-	
+
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="index"
+            <a class="nav-link" href="#"
               >Home <span class="sr-only">(current)</span></a
             >
           </li>
@@ -96,11 +94,8 @@
                   <p class="control has-icons-left">
                       <input class="input" name="password" type="password" placeholder="Password" required>
                       <span class="icon is-small is-left"> <i class="fas fa-lock"></i>
-                      
       </span>
                   </p>
-                  
-                  <a href="forgot">Forgot Password</a>
               </div>
 
           </section>
@@ -191,6 +186,8 @@
 
 
     <div class="container-fluid main" style="padding:70px;" >
+    
+    <h4 style="color: white;">Mail id already registered Please login again</h4>
       <h1 class="text-center" style="color: azure">Your Service Expert in Delhi</h1>
       <p class="sub-head text-center" style="color: beige">
         Get instant access to reliable and affordable services
@@ -225,7 +222,7 @@
         <div class="col-lg-2">
             <div class="form-group">                        
             <input id="onwardDate" type="date" name="mydate" max="3000-12-31"
-                min="2019-12-3" class="form-control">
+                 class="form-control">
             </div>
         </div>
          
