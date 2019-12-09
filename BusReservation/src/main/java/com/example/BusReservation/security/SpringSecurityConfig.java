@@ -24,7 +24,8 @@
   
   @Configuration
   
-  @EnableWebSecurity public class SpringSecurityConfig extends
+  @EnableWebSecurity 
+  public class SpringSecurityConfig extends
   WebSecurityConfigurerAdapter {
   
  // @Autowired DataSource dataSource;
@@ -36,7 +37,8 @@
 	 * BCryptPasswordEncoder(12); }
 	 */
   
-  @Override public void configure(HttpSecurity http) throws Exception {
+  @Override 
+  public void configure(HttpSecurity http) throws Exception {
   
   
   

@@ -9,5 +9,7 @@ class BusReservationApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
+	@Test
+	void test2()
+	{}
 }
